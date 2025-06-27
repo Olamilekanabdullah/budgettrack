@@ -1,0 +1,27 @@
+name = input("Enter your first name: ")
+print("Welcome " + name)
+
+income = float(input("Enter your total monthly income: "))
+
+expenses = {}
+
+while True:
+    name = input("Enter your monthly expenses' name. \n Type done if you're through: ")
+    if name.lower() == "done":
+        break
+    amount = float(input(f"Enter amount for {name}: $  "))
+    expenses[name] = amount
+
+total_expenses = sum(expenses.values())
+balance = income - total_expenses
+
+print("==== Budget Summary ====")
+print(f"Your monthly income is {income} $ ")
+
+print ("Your expenses breakdown is as follows: ")
+
+for name, amount in expenses.items():
+    print(f">> {name}: {amount} $ ")
+
+print(f"Your monthly expense is {total_expenses} $ ")
+print(f"You have {balance} $ left monthly. \n It would be nice if you saved it using our saving option. \n Thank you for using our budget app.")
